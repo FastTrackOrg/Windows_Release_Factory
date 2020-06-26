@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>FastTrack</DisplayName>
+    <Description>Install FastTrack.</Description>
+    <Version>4.9.2</Version>
+    <ReleaseDate></ReleaseDate>
+    
+    <Default>true</Default>
+    <Script>installscript.qs</Script>
+</Package>
