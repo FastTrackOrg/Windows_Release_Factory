@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Fast Track
-Comment=Track multiple objects in video recording
-Exec=fasttrack
-Icon=fasttrack
-Type=Application
-Categories=science;
-Terminal=false

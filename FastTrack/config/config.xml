@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>FastTrack</Name>
+    <Version>5.1.6</Version>
+    <Title>FastTrack Installer</Title>
+    <Publisher>FastTrackOrg</Publisher>
+    <StartMenuDir>FastTrack</StartMenuDir>
+    <TargetDir>@HomeDir@/Program Files (x86)/FastTrack</TargetDir>
+    <RemoteRepositories>
+    <Repository>
+        <Url>http://www.fasttrack.sh/download/FastTrack/</Url>
+    </Repository>
+</RemoteRepositories>
+</Installer>

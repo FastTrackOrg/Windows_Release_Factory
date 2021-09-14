@@ -1,0 +1,36 @@
+name: Continous Builds
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  job_2:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ilammy/msvc-dev-cmd@v1
+      - uses: jurplel/install-qt-action@v2
+        with:
+          host: "windows"
+          target: "desktop"
+          arch: "win64_msvc2019_64"
+          dir: "${{ github.workspace }}/Qt/"
+          install-deps: "true"
+          modules: "qtwebengine"
+          cached: "false"
+          tools: "tools_ifw,4.1.1,qt.tools.ifw.41"
+      - name: build
+        shell: cmd
+        run: |
+          ./deploy.bat
+      - name: Windows artefact
+        uses: actions/upload-artifact@v1
+        with:
+          name: FastTrackInstaller
+          path: ./FastTrackInstaller.exe
+      - name: Windows artefact
+        uses: actions/upload-artifact@v1
+        with:
+          name: FastTrackRep
+          path: ./FastTrackRep
