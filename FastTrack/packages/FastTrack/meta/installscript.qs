@@ -61,7 +61,7 @@ Component.prototype.installationFinished = function()
         if (installer.isInstaller() && installer.status == QInstaller.Success) {
             var isReadMeCheckBoxChecked = component.userInterface( "ReadMeCheckBoxForm" ).readMeCheckBox.checked;
             if (isReadMeCheckBoxChecked) {
-                QDesktopServices.openUrl("http://www.fasttrack.sh/UserManual/docs/intro.html");
+                QDesktopServices.openUrl("https://www.fasttrack.sh/docs/intro");
             }
             var isStartCheckBoxChecked = component.userInterface( "ReadMeCheckBoxForm" ).startCheckBox.checked;
             if (isStartCheckBoxChecked) {
