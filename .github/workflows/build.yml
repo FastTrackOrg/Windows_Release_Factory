@@ -23,6 +23,15 @@ jobs:
       - name: build
         shell: cmd
         run: |
+          choco install wget --no-progress
+          cd .\FastTrack\packages\FastTrack\data
+          rm placeholder
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.0.0a/FastTrack.zip
+          7z x FastTrack.zip -y
+          rm FastTrack.zip
+          7z a data.7z * -sdel
+          cd ${{ github.workspace }}
+          ls
           ./deploy.bat
       - name: Windows artefact
         uses: actions/upload-artifact@v1
