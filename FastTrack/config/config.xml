@@ -8,7 +8,7 @@
     <TargetDir>@HomeDir@/Program Files (x86)/FastTrack</TargetDir>
     <RemoteRepositories>
     <Repository>
-        <Url>http://www.fasttrack.sh/download/FastTrack/</Url>
+        <Url>https://www.fasttrack.sh/download/FastTrack/</Url>
     </Repository>
 </RemoteRepositories>
 </Installer>
