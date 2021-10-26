@@ -9,17 +9,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ilammy/msvc-dev-cmd@v1
-      - uses: jurplel/install-qt-action@v2
+      - uses: actions/setup-python@v2
         with:
-          host: "windows"
-          target: "desktop"
-          arch: "win64_msvc2019_64"
-          dir: "${{ github.workspace }}/Qt/"
-          install-deps: "true"
-          modules: "qtwebengine"
-          cached: "false"
-          tools: "tools_ifw,4.1.1,qt.tools.ifw.41"
+          python-version: '3.8'
+      - name: install qt6
+        run: |
+          pip install aqtinstall
+          python3 -m aqt install-qt -O ${{ github.workspace }}/Qt/ windows desktop 6.2.0 win64_msvc2019_64
+          python3 -m aqt install-tool -O ${{ github.workspace }}/Qt/ windows desktop tools_ifw
+          echo "${{ github.workspace }}/Qt/6.2.0/msvc2019_64/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "${{ github.workspace }}/Qt/Tools/QtInstallerFramework/4.1/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: build
         shell: cmd
         run: |
@@ -31,8 +30,8 @@ jobs:
           rm FastTrack.zip
           7z a data.7z * -sdel
           cd ${{ github.workspace }}
-          ls
-          ./deploy.bat
+          repogen.exe -p .\FastTrack\packages FastTrackRep
+          binarycreator.exe -p .\FastTrack\packages -c .\FastTrack\config\config.xml FastTrackInstaller
       - name: Windows artefact
         uses: actions/upload-artifact@v1
         with:
