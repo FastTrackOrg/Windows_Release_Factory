@@ -6,6 +6,12 @@
     <Publisher>FastTrackOrg</Publisher>
     <StartMenuDir>FastTrack</StartMenuDir>
     <TargetDir>@HomeDir@/Program Files (x86)/FastTrack</TargetDir>
+    <WizardStyle>Modern</WizardStyle>
+    <StyleSheet>style.qss</StyleSheet>
+    <Logo>logo.png</Logo>
+    <ProductImages>
+      <Image>preview_0.png</Image>
+    </ProductImages>
     <RemoteRepositories>
     <Repository>
         <Url>https://www.fasttrack.sh/download/FastTrack/</Url>
