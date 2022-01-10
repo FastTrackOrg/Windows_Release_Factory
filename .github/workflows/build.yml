@@ -17,7 +17,7 @@ jobs:
           pip install aqtinstall
           python3 -m aqt install-qt -O ${{ github.workspace }}/Qt/ windows desktop 6.2.1 win64_msvc2019_64
           python3 -m aqt install-tool -O ${{ github.workspace }}/Qt/ windows desktop tools_ifw qt.tools.ifw.42
-          echo "${{ github.workspace }}/Qt/6.2.0/msvc2019_64/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "${{ github.workspace }}/Qt/6.2.1/msvc2019_64/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
           echo "${{ github.workspace }}/Qt/Tools/QtInstallerFramework/4.2/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: build
         shell: cmd
@@ -25,7 +25,7 @@ jobs:
           choco install wget --no-progress
           cd .\FastTrack\packages\FastTrack\data
           rm placeholder
-          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.0.1/FastTrack.zip
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.1.0/FastTrack.zip
           7z x FastTrack.zip -y
           rm FastTrack.zip
           7z a data.7z * -sdel
