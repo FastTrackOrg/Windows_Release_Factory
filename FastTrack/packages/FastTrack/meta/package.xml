@@ -2,7 +2,7 @@
 <Package>
     <DisplayName>FastTrack</DisplayName>
     <Description>Install FastTrack</Description>
-    <Version>6.1.0</Version>
+    <Version>6.1.1</Version>
     <ReleaseDate></ReleaseDate>
     <Licenses>
     <License name="GNU GENERAL PUBLIC LICENSE" file="gpl-3.0.txt" />

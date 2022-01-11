@@ -25,7 +25,7 @@ jobs:
           choco install wget --no-progress
           cd .\FastTrack\packages\FastTrack\data
           rm placeholder
-          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.1.0/FastTrack.zip
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.1.1/FastTrack.zip
           7z x FastTrack.zip -y
           rm FastTrack.zip
           7z a data.7z * -sdel
