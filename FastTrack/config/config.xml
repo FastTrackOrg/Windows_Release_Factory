@@ -14,7 +14,7 @@
     </ProductImages>
     <RemoteRepositories>
     <Repository>
-        <Url>https://www.fasttrack.sh/download/FastTrack/</Url>
+        <Url>https://www.fasttrack.sh/download/</Url>
     </Repository>
 </RemoteRepositories>
 </Installer>
