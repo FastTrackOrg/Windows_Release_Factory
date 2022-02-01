@@ -59,10 +59,6 @@ Component.prototype.installationFinished = function()
 {
     try {
         if (installer.isInstaller() && installer.status == QInstaller.Success) {
-            var isMsvcCheckBoxChecked = component.userInterface( "ReadMeCheckBoxForm" ).msvcCheckBox.checked;
-            if (isMsvcCheckBoxChecked) {
-                installer.execute("@TargetDir@/vc_redist.x64.exe");
-            }
             var isReadMeCheckBoxChecked = component.userInterface( "ReadMeCheckBoxForm" ).readMeCheckBox.checked;
             if (isReadMeCheckBoxChecked) {
                 QDesktopServices.openUrl("https://www.fasttrack.sh/docs/intro");
