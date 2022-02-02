@@ -25,14 +25,14 @@ jobs:
           choco install wget --no-progress
           cd .\FastTrack\packages\FastTrack\data
           rm placeholder
-          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.1.2/FastTrack.zip
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.2.0/FastTrack.zip
           7z x FastTrack.zip -y
           rm FastTrack.zip
           7z a data.7z * -sdel
           cd ${{ github.workspace }}
           cd .\FastTrack\packages\FastTrack_Cli\data
           rm placeholder
-          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.1.2/FastTrack-Cli.zip
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.2.0/FastTrack-Cli.zip
           7z x FastTrack-Cli.zip -y
           rm FastTrack-Cli.zip
           7z a data.7z * -sdel
