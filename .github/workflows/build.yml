@@ -30,6 +30,13 @@ jobs:
           rm FastTrack.zip
           7z a data.7z * -sdel
           cd ${{ github.workspace }}
+          cd .\FastTrack\packages\FastTrack_Cli\data
+          rm placeholder
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.1.2/FastTrack-Cli.zip
+          7z x FastTrack-Cli.zip -y
+          rm FastTrack-Cli.zip
+          7z a data.7z * -sdel
+          cd ${{ github.workspace }}
           repogen.exe -p .\FastTrack\packages FastTrackRep
           binarycreator.exe -p .\FastTrack\packages -c .\FastTrack\config\config.xml FastTrackInstaller
       - name: Windows artefact

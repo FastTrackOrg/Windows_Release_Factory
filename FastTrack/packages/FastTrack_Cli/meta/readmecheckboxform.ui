@@ -26,23 +26,13 @@
    <item>
     <widget class="QCheckBox" name="readMeCheckBox">
      <property name="text">
-      <string>Open FastTrack User Manual</string>
+      <string>Open FastTrack-Cli User Manual</string>
      </property>
      <property name="checked">
       <bool>true</bool>
      </property>
      <property name="tristate">
       <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QCheckBox" name="startCheckBox">
-     <property name="text">
-      <string>Start FastTrack</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
      </property>
     </widget>
    </item>
