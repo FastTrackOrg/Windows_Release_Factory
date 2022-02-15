@@ -4,6 +4,9 @@ on:
   push:
     branches: [master]
 
+env:
+  VERSION: v6.2.1
+
 jobs:
   job_2:
     runs-on: windows-latest
@@ -25,14 +28,14 @@ jobs:
           choco install wget --no-progress
           cd .\FastTrack\packages\FastTrack\data
           rm placeholder
-          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.2.1/FastTrack.zip
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/${{ env.VERSION }}/FastTrack.zip
           7z x FastTrack.zip -y
           rm FastTrack.zip
           7z a data.7z * -sdel
           cd ${{ github.workspace }}
           cd .\FastTrack\packages\FastTrack_Cli\data
           rm placeholder
-          wget https://github.com/FastTrackOrg/FastTrack/releases/download/v6.2.1/FastTrack-Cli.zip
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/${{ env.VERSION }}/FastTrack-Cli.zip
           7z x FastTrack-Cli.zip -y
           rm FastTrack-Cli.zip
           7z a data.7z * -sdel
