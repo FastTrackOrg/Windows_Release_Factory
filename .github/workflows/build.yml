@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 env:
-  VERSION: v6.2.2
+  VERSION: v6.2.3
 
 jobs:
   job_2:
@@ -19,9 +19,9 @@ jobs:
         run: |
           pip install aqtinstall
           python3 -m aqt install-qt -O ${{ github.workspace }}/Qt/ windows desktop 6.2.1 win64_msvc2019_64
-          python3 -m aqt install-tool -O ${{ github.workspace }}/Qt/ windows desktop tools_ifw qt.tools.ifw.42
+          python3 -m aqt install-tool -O ${{ github.workspace }}/Qt/ windows desktop tools_ifw qt.tools.ifw.43
           echo "${{ github.workspace }}/Qt/6.2.1/msvc2019_64/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-          echo "${{ github.workspace }}/Qt/Tools/QtInstallerFramework/4.2/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "${{ github.workspace }}/Qt/Tools/QtInstallerFramework/4.3/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: build
         shell: cmd
         run: |
