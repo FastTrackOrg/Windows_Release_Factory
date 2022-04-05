@@ -6,6 +6,9 @@ on:
 
 env:
   VERSION: v6.2.5
+  QT_VERSION: 6.2.4
+  QTIFW_VERSION: 4.3
+  QTIFW_VERSION_REDUCT: 43
 
 jobs:
   job_2:
@@ -18,10 +21,10 @@ jobs:
       - name: install qt6
         run: |
           pip install aqtinstall
-          python3 -m aqt install-qt -O ${{ github.workspace }}/Qt/ windows desktop 6.2.1 win64_msvc2019_64
-          python3 -m aqt install-tool -O ${{ github.workspace }}/Qt/ windows desktop tools_ifw qt.tools.ifw.43
-          echo "${{ github.workspace }}/Qt/6.2.1/msvc2019_64/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-          echo "${{ github.workspace }}/Qt/Tools/QtInstallerFramework/4.3/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          python3 -m aqt install-qt -O ${{ github.workspace }}/Qt/ windows desktop ${{ env.QT_VERSION }} win64_msvc2019_64
+          python3 -m aqt install-tool -O ${{ github.workspace }}/Qt/ windows desktop tools_ifw qt.tools.ifw.${{ env.QTIFW_VERSION_REDUCT }}
+          echo "${{ github.workspace }}/Qt/${{ env.QT_VERSION }}/msvc2019_64/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "${{ github.workspace }}/Qt/Tools/QtInstallerFramework/${{ env.QTIFW_VERSION }}/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: build
         shell: cmd
         run: |
