@@ -5,10 +5,10 @@ on:
     branches: [master]
 
 env:
-  VERSION: v6.2.6
+  VERSION: v6.2.7
   QT_VERSION: 6.2.4
-  QTIFW_VERSION: 4.3
-  QTIFW_VERSION_REDUCT: 43
+  QTIFW_VERSION: 4.4
+  QTIFW_VERSION_REDUCT: 44
 
 jobs:
   job_2:
