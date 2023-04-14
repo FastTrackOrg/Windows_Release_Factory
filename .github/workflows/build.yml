@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 env:
-  VERSION: v6.3.0
+  VERSION: v6.3.1
   QT_VERSION: 6.4.2
   QTIFW_VERSION: 4.5
   QTIFW_VERSION_REDUCT: 45
