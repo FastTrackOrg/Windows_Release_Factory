@@ -5,10 +5,9 @@ on:
     branches: [master]
 
 env:
-  VERSION: v6.3.3
+  VERSION: v6.3.4
   QT_VERSION: 6.5.2
-  QTIFW_VERSION: 4.6
-  QTIFW_VERSION_REDUCT: 46
+  QTIFW_VERSION: 4.7
 
 jobs:
   job_2:
@@ -22,7 +21,7 @@ jobs:
         run: |
           pip install aqtinstall
           python3 -m aqt install-qt -O ${{ github.workspace }}/Qt/ windows desktop ${{ env.QT_VERSION }} win64_msvc2019_64
-          python3 -m aqt install-tool -O ${{ github.workspace }}/Qt/ windows desktop tools_ifw qt.tools.ifw.${{ env.QTIFW_VERSION_REDUCT }}
+          python3 -m aqt install-tool -O ${{ github.workspace }}/Qt/ windows desktop tools_ifw
           echo "${{ github.workspace }}/Qt/${{ env.QT_VERSION }}/msvc2019_64/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
           echo "${{ github.workspace }}/Qt/Tools/QtInstallerFramework/${{ env.QTIFW_VERSION }}/bin/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: build
@@ -46,12 +45,12 @@ jobs:
           repogen.exe -p .\FastTrack\packages FastTrackRep
           binarycreator.exe -p .\FastTrack\packages -c .\FastTrack\config\config.xml FastTrackInstaller
       - name: Windows artefact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: FastTrackInstaller
           path: ./FastTrackInstaller.exe
       - name: Windows artefact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: FastTrackRep
           path: ./FastTrackRep
