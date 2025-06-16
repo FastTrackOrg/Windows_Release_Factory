@@ -5,8 +5,8 @@ on:
     branches: [master]
 
 env:
-  VERSION: v6.3.4
-  QT_VERSION: 6.5.2
+  VERSION: v6.4.0
+  QT_VERSION: 6.7.0
   QTIFW_VERSION: 4.7
 
 jobs:
@@ -33,13 +33,6 @@ jobs:
           wget https://github.com/FastTrackOrg/FastTrack/releases/download/${{ env.VERSION }}/FastTrack.zip
           7z x FastTrack.zip -y
           rm FastTrack.zip
-          7z a data.7z * -sdel
-          cd ${{ github.workspace }}
-          cd .\FastTrack\packages\FastTrack_Cli\data
-          rm placeholder
-          wget https://github.com/FastTrackOrg/FastTrack/releases/download/${{ env.VERSION }}/FastTrack-Cli.zip
-          7z x FastTrack-Cli.zip -y
-          rm FastTrack-Cli.zip
           7z a data.7z * -sdel
           cd ${{ github.workspace }}
           repogen.exe -p .\FastTrack\packages FastTrackRep

@@ -38,6 +38,8 @@ Component.prototype.createOperations = function()
     if (systemInfo.productType === "windows") {
         component.addOperation("CreateShortcut", "@TargetDir@/FastTrack.exe", "@StartMenuDir@/FastTrack.lnk",
             "workingDirectory=@TargetDir@","iconPath=@TargetDir@/icon.ico", "description=FastTrack");
+        component.addOperation("CreateShortcut", "@TargetDir@/FastTrack-Cli.exe", "@StartMenuDir@/FastTrack-Cli.lnk",
+            "workingDirectory=@TargetDir@","iconPath=@TargetDir@/icon.ico", "description=FastTrackCli");
         component.addOperation("CreateShortcut", "@TargetDir@/maintenancetool.exe", "@StartMenuDir@/FastTrackUpdater.lnk",
             "workingDirectory=@TargetDir@", "description=FastTrack Updater");
         installer.setDefaultPageVisible(QInstaller.LicenseCheck, false);
