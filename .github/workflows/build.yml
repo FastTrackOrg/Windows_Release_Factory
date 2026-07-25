@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 env:
-  VERSION: v6.5.0
+  VERSION: v6.6.0
   QT_VERSION: 6.7.0
   QTIFW_VERSION: 4.7
 
@@ -30,7 +30,7 @@ jobs:
           choco install wget --no-progress
           cd .\FastTrack\packages\FastTrack\data
           rm placeholder
-          wget https://github.com/FastTrackOrg/FastTrack/releases/download/${{ env.VERSION }}/FastTrack.zip
+          wget https://github.com/FastTrackOrg/FastTrack/releases/download/${{ env.VERSION }}/FastTrack_x86_64.zip
           7z x FastTrack.zip -y
           rm FastTrack.zip
           7z a data.7z * -sdel
